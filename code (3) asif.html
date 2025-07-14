@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Asif Hussain - System Administrator | Team Lead</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            /* Vibrant & Modern Color Palette */
+            --primary-color-start: #6a11cb; /* Deep Purple */
+            --primary-color-end: #2575fc;   /* Bright Blue */
+            --accent-color-1: #ff6b6b;      /* Coral Red */
+            --accent-color-2: #ffe66d;      /* Sunny Yellow */
+            --text-dark: #2c3e50;           /* Dark Slate Blue */
+            --text-medium: #34495e;         /* Slightly Lighter Slate */
+            --text-light: #7f8c8d;          /* Muted Grey */
+            --background-light: #ecf0f1;    /* Light Grey */
+            --background-card: #ffffff;     /* Pure White */
+            --border-color: #e0e0e0;        /* Soft Grey Border */
+            --shadow-light: rgba(0, 0, 0, 0.1); /* More visible shadow */
+            --shadow-medium: rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            --border-radius-sm: 8px;
+            --border-radius-md: 15px;       /* More rounded corners */
+            --transition-speed: 0.4s;       /* Slightly slower for smoother effects */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif; /* Modern, clean font */
+            line-height: 1.8; /* Increased line height for readability */
+            color: var(--text-medium);
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Subtle gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px; /* More padding */
+            overflow-x: hidden;
+        }
+
+        /* Main Container */
+        .portfolio-container {
+            background-color: var(--background-card);
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 25px 50px var(--shadow-medium); /* Stronger, more modern shadow */
+            width: 100%;
+            max-width: 1100px; /* Slightly wider */
+            padding: 50px; /* More internal padding */
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px; /* More space between sections */
+            position: relative;
+            overflow: hidden;
+            transform: scale(1); /* Base scale for animation */
+            animation: fadeInScale 1s ease-out forwards; /* Initial animation */
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Background Gradients/Shapes (More prominent & colorful) */
+        .portfolio-container::before,
+        .portfolio-container::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15; /* More visible */
+            filter: blur(120px); /* More blur */
+            z-index: 0;
+        }
+
+        .portfolio-container::before {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, var(--primary-color-start), var(--accent-color-1)); /* Purple to Red */
+            top: -100px;
+            left: -100px;
+        }
+
+        .portfolio-container::after {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, var(--primary-color-end), var(--accent-color-2)); /* Blue to Yellow */
+            bottom: -120px;
+            right: -120px;
+        }
+
+        /* Ensure content is above background */
+        .portfolio-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-color); /* Thicker border */
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif; /* Different font for headings */
+            font-size: 4.5em; /* Larger, more impactful */
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1.5px; /* Tighter spacing */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05); /* Subtle text shadow */
+        }
+
+        .header p {
+            font-size: 1.6em; /* Larger */
+            color: var(--text-light);
+            margin-top: 0;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            margin-top: 30px; /* More space */
+            font-size: 1.15em; /* Larger */
+            color: var(--text-light);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 40px; /* More horizontal gap */
+        }
+
+        .contact-info span, .contact-info a {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* More gap */
+            color: var(--text-medium);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease, transform 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-color-end); /* Hover color */
+            transform: translateY(-3px); /* Lift on hover */
+        }
+
+        .contact-info i {
+            background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end)); /* Gradient icon color */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.4em; /* Larger icons */
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 40px;
+            padding: 35px; /* More padding */
+            background-color: var(--background-card);
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 10px 30px var(--shadow-light); /* Stronger shadow */
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            border: 1px solid var(--border-color); /* Subtle border */
+        }
+
+        .section:hover {
+            transform: translateY(-8px); /* More pronounced lift on hover */
+            box-shadow: 0 18px 40px var(--shadow-medium); /* Stronger shadow on hover */
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em; /* Larger headings */
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center; /* Center section titles */
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%; /* Center the underline */
+            transform: translateX(-50%); /* Center the underline */
+            bottom: 0;
+            width: 100px; /* Longer underline */
+            height: 5px; /* Thicker underline */
+            background: linear-gradient(90deg, var(--primary-color-start), var(--primary-color-end)); /* Gradient underline */
+            border-radius: 3px;
+        }
+
+        /* Professional Summary */
+        .summary p {
+            font-size: 1.2em; /* Larger text */
+            color: var(--text-medium);
+            line-height: 1.9;
+            text-align: justify;
+            max-width: 900px; /* Constrain width for readability */
+            margin: 0 auto; /* Center the paragraph */
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background-color: var(--background-light); /* Lighter background for nested cards */
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* More visible shadow */
+            border-left: 6px solid; /* Thicker border */
+            border-image: linear-gradient(to bottom, var(--primary-color-start), var(--primary-color-end)) 1; /* Gradient border */
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-10px); /* More pronounced lift */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        }
+
+        .experience-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.9em; /* Larger */
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .experience-item p.role-company {
+            font-size: 1.35em; /* Larger */
+            color: var(--text-light);
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .experience-item p.duration-location {
+            font-size: 1.1em; /* Slightly larger */
+            color: var(--text-light);
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .experience-item p.duration-location i {
+            background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2)); /* Gradient icon color */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+            color: var(--text-medium);
+        }
+
+        .experience-item ul li {
+            margin-bottom: 12px;
+            font-size: 1.1em; /* Slightly larger */
+            position: relative;
+            padding-left: 30px; /* More space for custom bullet */
+        }
+
+        .experience-item ul li::before {
+            content: '\2713'; /* Checkmark symbol */
+            font-family: 'Font Awesome 5 Free'; /* Use Font Awesome for checkmark */
+            font-weight: 900; /* Solid icon */
+            color: var(--accent-color-1); /* Checkmark color */
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+            top: 2px; /* Adjust vertical alignment */
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 25px;
+            padding: 22px; /* More padding */
+            background-color: var(--background-light);
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--accent-color-2); /* Yellow border */
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7em; /* Larger */
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .education-item p {
+            font-size: 1.1em; /* Slightly larger */
+            color: var(--text-light);
+            margin-top: 0;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px; /* More gap */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            justify-content: center; /* Center skill tags */
+        }
+
+        .skills-list li {
+            background: linear-gradient(45deg, var(--primary-color-start), var(--primary-color-end)); /* Gradient background */
+            color: #ffffff;
+            padding: 14px 30px; /* More padding */
+            border-radius: 35px; /* More rounded, pill-like */
+            font-size: 1.05em; /* Slightly larger */
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-list li::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2); /* Subtle white overlay for hover effect */
+            transition: all var(--transition-speed) ease;
+        }
+
+        .skills-list li:hover {
+            transform: translateY(-6px) scale(1.02); /* More lift and slight scale */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+        }
+
+        .skills-list li:hover::before {
+            left: 0; /* Slide in overlay */
+        }
+
+        /* Languages Section */
+        .languages-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* More gap */
+            justify-content: center; /* Center languages */
+        }
+
+        .languages-list li {
+            font-size: 1.2em; /* Slightly larger */
+            color: var(--text-medium);
+            display: flex;
+            align-items: center;
+            gap: 12px; /* More gap */
+            background-color: var(--background-light);
+            padding: 10px 20px;
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .languages-list li:hover {
+            transform: translateY(-3px);
+        }
+
+        .languages-list li strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .languages-list li i {
+            background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2)); /* Gradient icon color */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5em; /* Larger icon */
+        }
+
+        /* Footer/Declaration */
+        .declaration {
+            font-size: 1em; /* Slightly larger */
+            color: var(--text-light);
+            text-align: center; /* Center declaration */
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .declaration p {
+            margin-bottom: 10px;
+        }
+
+        .declaration strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .portfolio-container {
+                padding: 40px;
+                gap: 40px;
+            }
+            .header h1 {
+                font-size: 3.8em;
+            }
+            .header p {
+                font-size: 1.4em;
+            }
+            .section h2 {
+                font-size: 2.4em;
+            }
+            .experience-item h3 {
+                font-size: 1.7em;
+            }
+            .experience-item p.role-company {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 25px;
+            }
+            .portfolio-container {
+                padding: 30px;
+                gap: 30px;
+            }
+            .header h1 {
+                font-size: 3em;
+            }
+            .header p {
+                font-size: 1.2em;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .section {
+                padding: 25px;
+            }
+            .section h2 {
+                font-size: 2em;
+                margin-bottom: 25px;
+            }
+            .section h2::after {
+                width: 80px;
+                height: 4px;
+            }
+            .summary p {
+                font-size: 1.1em;
+            }
+            .experience-item {
+                padding: 20px;
+                border-left-width: 5px;
+            }
+            .experience-item h3 {
+                font-size: 1.5em;
+            }
+            .experience-item p.role-company {
+                font-size: 1.1em;
+            }
+            .experience-item ul li {
+                font-size: 1em;
+                padding-left: 25px;
+            }
+            .skills-list li {
+                padding: 12px 25px;
+                font-size: 0.95em;
+            }
+            .languages-list li {
+                font-size: 1.1em;
+            }
+            .declaration {
+                font-size: 0.9em;
+                padding-top: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            .portfolio-container {
+                padding: 20px;
+                gap: 25px;
+            }
+            .header h1 {
+                font-size: 2.5em;
+                letter-spacing: -1px;
+            }
+            .header p {
+                font-size: 1em;
+            }
+            .contact-info {
+                font-size: 0.95em;
+                gap: 10px;
+            }
+            .contact-info i {
+                font-size: 1.2em;
+            }
+            .section h2 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            .section h2::after {
+                width: 60px;
+                height: 3px;
+            }
+            .summary p {
+                font-size: 1em;
+            }
+            .experience-item {
+                padding: 15px;
+                border-left-width: 4px;
+            }
+            .experience-item h3 {
+                font-size: 1.3em;
+            }
+            .experience-item p.role-company {
+                font-size: 0.95em;
+            }
+            .experience-item ul li {
+                font-size: 0.9em;
+                padding-left: 22px;
+            }
+            .skills-list li {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            .languages-list li {
+                font-size: 1em;
+            }
+            .declaration {
+                font-size: 0.85em;
+                padding-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <header class="header">
+            <h1>Mohd Asif Hussain</h1>
+            <p>System Administrator | Team Lead</p>
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
+                <a href="mailto:asifshaikh1323@gmail.com"><i class="fas fa-envelope"></i> asifshaikh1323@gmail.com</a>
+                <span><i class="fas fa-phone-alt"></i> +91 7738453492</span>
+                <a href="https://linkedin.com/in/asif-hussain-404b52138" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            </div>
+        </header>
+
+        <section class="section summary">
+            <h2>Professional Summary</h2>
+            <p>Results-driven IT professional with over 7+ years of extensive experience in System Administration, Team Leadership, and Office 365 & Azure environments. Adept at managing complex infrastructures, implementing Microsoft technologies, and leading cross-functional teams to deliver high-quality technical solutions. Strong focus on Exchange Online, Active Directory management, security policy implementation, and cloud services integration. Highly skilled in troubleshooting, remote support, user training, and IT operations, with a proven ability to manage high-priority clients and escalated technical issues. Passionate about continuous learning and driving digital transformation in enterprise environments.</p>
+        </section>
+
+        <section class="section experience">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <h3>System Administrator Team Lead</h3>
+                <p class="role-company">Wipro Ltd, Mumbai</p>
+                <p class="duration-location"><i class="far fa-calendar-alt"></i> August 2023 – Present | <i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+                <ul>
+                    <li>Administer IT environments including workstations, printers, servers, software installation, inventory management, updates, and patches.</li>
+                    <li>Administer Microsoft Windows servers (installation, configuration, upgrade, patching).</li>
+                    <li>Manage Windows OS and device deployment using MDM solutions; patch OS and third-party software.</li>
+                    <li>Lead Office 365 configuration and integration with Exchange Online and Azure services.</li>
+                    <li>Develop and deploy custom malware, spam, and connection filter policies to enhance system security.</li>
+                    <li>Managed Azure Active Directory Groups and Office 365 licensing for optimal access control.</li>
+                    <li>Troubleshoot and resolve complex collaboration and communication issues across Office 365 services.</li>
+                    <li>Collaborate with internal IT teams and external vendors to maintain high service performance.</li>
+                    <li>Configure secure authentication methods and maintain Active Directory for multi-site environments.</li>
+                    <li>Utilize BMC Remedy, TeamViewer, MSTSC, and other tools for efficient remote administration.</li>
+                    <li>Manage user and service accounts and permissions.</li>
+                    <li>Maintain system administration documentation and systems based on best practices.</li>
+                    <li>Observe and enforce group IT guidelines and IT standard operating procedures.</li>
+                    <li>Analyze, troubleshoot, and resolve problems.</li>
+                    <li>Follow best practices and strategies for application deployment and infrastructure maintenance.</li>
+                    <li>Perform Incident management (troubleshoot and resolve incidents).</li>
+                    <li>Perform Change management (plan and implement changes).</li>
+                    <li>Monitor and manage systems and services health.</li>
+                    <li>Monitor infrastructure components and application performance.</li>
+                    <li>Manage and handle logistics for IT equipment.</li>
+                    <li>Support the IT aspects of employee on- and off-boarding processes.</li>
+                    <li>Follow up on ticket requests and escalate as needed.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>System Engineer L2</h3>
+                <p class="role-company">Payroll- Acute Informatics Pvt Ltd (Client site- IndusInd Bank)</p>
+                <p class="duration-location"><i class="far fa-calendar-alt"></i> March 2021 – July 2023</p>
+                <ul>
+                    <li>Administered the IT environment including workstations, printers, servers, software installation, inventory management, updates, and patching.</li>
+                    <li>Installed, configured, upgraded, and patched Microsoft Windows servers across production and test environments.</li>
+                    <li>Managed Windows OS and device deployment using MDM solutions; ensured timely patching of OS and third-party software.</li>
+                    <li>Led Office 365 configuration and integration with Exchange Online and Azure services.</li>
+                    <li>Developed and implemented custom malware, spam, and connection filter policies to strengthen system security.</li>
+                    <li>Managed Azure Active Directory groups and Office 365 licensing for secure and efficient access control.</li>
+                    <li>Configured and managed hybrid Active Directory environments with Azure AD Connect.</li>
+                    <li>Created and maintained Group Policy Objects (GPOs) to enforce security and compliance across user and computer accounts.</li>
+                    <li>Troubleshot and resolved complex issues related to collaboration and communication in Office 365.</li>
+                    <li>Configured secure authentication methods, including MFA and conditional access policies, across cloud and on-prem systems.</li>
+                    <li>Conducted system audits and vulnerability assessments to maintain compliance and improve security posture.</li>
+                    <li>Utilized BMC Remedy, TeamViewer, MSTSC, and other remote tools for efficient technical support and system access.</li>
+                    <li>Collaborated with internal IT teams and external vendors to ensure consistent and high-performing IT services.</li>
+                    <li>Managed user and service accounts, including permissions, group memberships, and mailbox configurations.</li>
+                    <li>Maintained up-to-date system administration documentation in alignment with ITIL and security best practices.</li>
+                    <li>Enforced group IT guidelines and adhered to organizational standard operating procedures (SOPs).</li>
+                    <li>Provided L2/L3 support, resolving escalated technical issues and reducing downtime for business-critical systems.</li>
+                    <li>Conducted IT asset management, tracking hardware/software inventory and managing license compliance.</li>
+                    <li>Supported on-boarding/off-boarding processes, including user account provisioning and hardware preparation.</li>
+                    <li>Planned and implemented system changes through structured change management procedures.</li>
+                    <li>Performed proactive incident management and root cause analysis to ensure timely issue resolution.</li>
+                    <li>Monitored and optimized system performance, availability, and application reliability across IT infrastructure.</li>
+                    <li>Configured and managed VPN and firewall settings for secure remote access and data protection.</li>
+                    <li>Delivered user training and support for collaboration tools such as Microsoft Teams, SharePoint, and OneDrive.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>System Engineer L1</h3>
+                <p class="role-company">Payroll- Aforeserve Ltd (Client Site-Central Bank of India & Motilal Oswal)</p>
+                <p class="duration-location"><i class="far fa-calendar-alt"></i> June 2018 – February 2021</p>
+                <ul>
+                    <li>Delivered technical support for end-users across Windows, Linux, and macOS operating systems.</li>
+                    <li>Diagnosed and resolved a wide range of hardware, software, and network connectivity issues.</li>
+                    <li>Installed and configured software including Microsoft Office, antivirus tools, and custom business applications.</li>
+                    <li>Set up and configured Microsoft Outlook accounts (POP, IMAP, and Exchange) for employees and vendors.</li>
+                    <li>Provided first-level support for Microsoft Office Suite applications, addressing common user issues and functionality concerns.</li>
+                    <li>Performed basic networking tasks including IP address configuration, DNS troubleshooting, and connectivity checks using tools like ping and tracert.</li>
+                    <li>Troubleshot email client issues such as send/receive errors, syncing problems, and account configuration conflicts.</li>
+                    <li>Installed, configured, and supported printers and scanners, including resolving driver and connectivity issues.</li>
+                    <li>Facilitated file sharing across networks by configuring shared folders, drive mapping, and setting appropriate permissions.</li>
+                    <li>Assisted in on-boarding new users by setting up user profiles, installing required software, and providing initial training.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Science in Information Technology</h3>
+                <p>Mumbai University, Mumbai (2022)</p>
+            </div>
+            <div class="education-item">
+                <h3>Diploma in Computer Engineering</h3>
+                <p>CTEVT, Janakpur (2013)</p>
+            </div>
+        </section>
+
+        <section class="section skills">
+            <h2>Key Skills</h2>
+            <ul class="skills-list">
+                <li>Active Directory Management</li>
+                <li>Azure Services and Cloud Platform Management</li>
+                <li>Endpoint Management</li>
+                <li>Network Troubleshooting (LAN/WAN, VPN)</li>
+                <li>Incident & Problem Management (Remedy, Service Desk)</li>
+                <li>Client Handling and VIP Support</li>
+                <li>Microsoft 365 (O365) Administration</li>
+                <li>Exchange Online Configuration and Security Policies</li>
+                <li>Office 365 Protection and Compliance Policies</li>
+                <li>Server and Desktop Support (Windows/Linux)</li>
+                <li>Remote Support Tools: TeamViewer, RDP, MSTSC, MSRA, Zoom</li>
+            </ul>
+        </section>
+
+        <section class="section languages">
+            <h2>Languages</h2>
+            <ul class="languages-list">
+                <li><i class="fas fa-globe"></i> <strong>English:</strong> Fluent</li>
+                <li><i class="fas fa-globe"></i> <strong>Hindi:</strong> Fluent</li>
+                <li><i class="fas fa-globe"></i> <strong>Marathi:</strong> Basic</li>
+                <li><i class="fas fa-globe"></i> <strong>Arabic:</strong> Basic</li>
+            </ul>
+        </section>
+
+        
